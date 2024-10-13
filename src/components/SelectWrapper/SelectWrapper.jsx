@@ -1,33 +1,24 @@
 import Select from "react-select";
+import { darkerMainColor } from "../../styles/constants";
 
-const dot = (color = 'transparent') => ({
-    alignItems: 'center',
-    display: 'flex',
-  
-    ':before': {
-      backgroundColor: color,
-      borderRadius: 10,
-      content: '" "',
-      display: 'block',
-      marginRight: 8,
-      height: 10,
-      width: 10,
-    },
-  });
-
-const SelectWrapper = ({value='', onChange, id, options=[], isDotted = false}) => {
+const SelectWrapper = ({onChange, id, value='', options=[], isDotted = false}) => {
     const style = {
         control: (baseStyles) => ({
             ...baseStyles,
             border: 'none',
-            boxShadow: 'none'
+            boxShadow: 'none',
+            color:'#' + darkerMainColor
         }),
+        singleValue: (styles) => ({
+            ...styles,
+            color:'#' + darkerMainColor
+        })
     }
 
     if(isDotted) {
         style['input'] = (styles) => ({ ...styles, ...dot() })
         style['placeholder'] = (styles) => ({ ...styles, ...dot('#ccc') })
-        style['singleValue'] = (styles, { data }) => ({ ...styles, ...dot(data.color) })
+        style['singleValue'] = (styles, { data }) => ({ ...styles, color:'#' + darkerMainColor, ...dot(data.color) })
         style['option'] = (styles, { data }) => ({ ...styles, ...dot(data.color) })
     }
     
@@ -37,7 +28,7 @@ const SelectWrapper = ({value='', onChange, id, options=[], isDotted = false}) =
             value={value}
             onChange={onChange}
             options={options}
-            className="w-full pl-2"
+            className="w-full pl-2 text-darker-main-color"
             styles={{...style}}
             components={{
                 IndicatorSeparator: () => null
@@ -45,5 +36,20 @@ const SelectWrapper = ({value='', onChange, id, options=[], isDotted = false}) =
         />
     )
 }
+
+const dot = (color = 'transparent', size = 10) => ({
+    alignItems: 'center',
+    display: 'flex',
+  
+    ':before': {
+      backgroundColor: color,
+      borderRadius: size,
+      content: '" "',
+      display: 'block',
+      marginRight: 8,
+      height: size,
+      width: size,
+    },
+});
 
 export default SelectWrapper;

@@ -1,3 +1,5 @@
 module.exports = {
-    mainColor: 'DBD3D3',
+    ligherMainColor: 'faf7f7',
+    mainColor: 'edebeb',
+    darkerMainColor: '878686'
 };

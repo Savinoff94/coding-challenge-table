@@ -1,4 +1,4 @@
-import SearchIcon from "./SearchIcon"
+import SearchIcon from "../Icons/SearchIcon";
 import InputWrapper from "../InputWrapper/InputWrapper";
 
 const SearchInput = ({value='', onChange=null}) => {
