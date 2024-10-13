@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Container from "./Container";
-import Main from "../pages/Main/Main";
+import TablePage from "../pages/TablePage/TablePage";
 
 const Routes = () => {
     const router = createBrowserRouter([
@@ -10,7 +10,7 @@ const Routes = () => {
             children: [
                 {
                     index: true,
-                    element: <Main />,
+                    element: <TablePage />,
                 },
             ],
         },
