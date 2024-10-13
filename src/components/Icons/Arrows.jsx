@@ -92,12 +92,14 @@ export function BendedArrow({width='20', height='20', color='rgb(156 163 175)'})
   );
 }
 
-export function VerticalArrows({isUp = true, width, height}) {
+export function VerticalArrows({isUp = true, onClick, width, height}) {
 
   return(
-    isUp ? 
-    <ArrowUp width={width} height={height}/> 
-    : 
-    <ArrowDown width={width} height={height}/>
+    <button onClick={onClick} className="cursor-pointer">
+      {
+        isUp ? <ArrowUp width={width} height={height}/> : <ArrowDown width={width} height={height}/>
+      }
+    </button>
+    
   )
 }

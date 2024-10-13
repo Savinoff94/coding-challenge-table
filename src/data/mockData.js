@@ -7,7 +7,6 @@ export const data = [
         name: 'Alice Johnson',
         email: 'alice.johnson@example.com',
         picUrl: 'https://ui-avatars.com/api/?name=Alice+Johnson&size=150'
-
       }
     },
     {

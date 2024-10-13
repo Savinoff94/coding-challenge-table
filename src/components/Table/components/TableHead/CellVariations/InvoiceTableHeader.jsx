@@ -1,7 +1,8 @@
 import { useState } from "react";
 import TableHeaderCell from "../TableHeaderCell";
 import Checkbox from "../../../../Checkbox/Checkbox";
-import { VerticalArrows } from "../../../../Icons/Arrows";
+import SortiongArrows from "./SortingArrows";
+import { dataFields } from "../../../../../functions/helpers";
 const InvoiceTableHeader = ({updateData}) => {
 
     const [invoiceCheckboxState, setInvoiceCheckboxState] = useState(false);
@@ -23,7 +24,7 @@ const InvoiceTableHeader = ({updateData}) => {
         <TableHeaderCell className="text-left align-middle">
             <Checkbox isChecked={invoiceCheckboxState} handleCheckboxChange={invoiceClickHandler}/>
             Invoice
-            <VerticalArrows width={'25'} height={'25'}/>
+            <SortiongArrows updateData={updateData} fieldName={dataFields.invoice} />
         </TableHeaderCell>
     )
 }

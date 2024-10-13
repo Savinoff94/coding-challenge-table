@@ -1,8 +1,9 @@
 import classNames from "classnames"
 import TableHeaderCell from './TableHeaderCell'
 import { TableRow } from "../TableBody/TableRow"
-import { VerticalArrows } from "../../../Icons/Arrows"
 import InvoiceTableHeader from "./CellVariations/InvoiceTableHeader"
+import SortiongArrows from "./CellVariations/SortingArrows"
+import { dataFields } from "../../../../functions/helpers"
 
 
 export const TableHead = ({updateData, additionalClass = ''}) => {
@@ -13,11 +14,11 @@ export const TableHead = ({updateData, additionalClass = ''}) => {
                 <InvoiceTableHeader updateData={updateData} />
                 <TableHeaderCell divAdditionalClass="text-left align-middle">
                     Date
-                    <VerticalArrows width={'25'} height={'25'}/>
+                    <SortiongArrows updateData={updateData} fieldName={dataFields.date}/>
                 </TableHeaderCell>
                 <TableHeaderCell divAdditionalClass="text-left align-middle ">
                     Status
-                    <VerticalArrows width={'25'} height={'25'}/>
+                    <SortiongArrows updateData={updateData} fieldName={dataFields.status}/>
                 </TableHeaderCell>
                 <TableHeaderCell divAdditionalClass="text-left align-middle "> 
                     Customer

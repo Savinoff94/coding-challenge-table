@@ -8,16 +8,11 @@ import StatusCell from "./components/TableBody/CellsVariations/StatusCell";
 import LinksCell from "./components/TableBody/CellsVariations/LinksCell";
 
 const Table = ({isLoading=false, error='', data = [], updateData}) => {
-    
-    const handlers = {
-        dateClickHandler: ()=> {},
-    }
-
     return (
         <div className="pl-3 pr-3 box-border">
             <div className="border-2 border-lighter-main-color rounded-lg">
                 <table className="w-full ">
-                    <TableHead handlers={handlers} updateData={updateData} />
+                    <TableHead updateData={updateData} />
                     <tbody>
                         {
                             data.map((row) => {

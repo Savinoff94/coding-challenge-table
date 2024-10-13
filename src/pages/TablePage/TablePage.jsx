@@ -23,11 +23,9 @@ const TablePage = () => {
             const flags = []
 
             if(searchOrder) {
-
                 flags.push(row.invoice.includes(parseInt(searchOrder)+''));
             }
             if(status.value.toLowerCase() !== 'all') {
-
                 flags.push(row.status === status.value)
             }
             
