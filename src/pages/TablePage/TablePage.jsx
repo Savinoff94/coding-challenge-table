@@ -2,6 +2,7 @@ import Table from "../../components/Table/Table"
 import SearchInput from "../../components/SearchInput/SearchInput"
 import {StatusSelect, options as statusSelectOptions} from "../../components/StatusSelect/StatusSelect"
 import {CategorySelect, options as categorySelectOptions} from '../../components/CategorySelect/CategorySelect'
+import PageArrowButton from "../../components/PageArrowButton/PageArrowButton"
 import useFetchData from "../../hooks/useFetchData"
 import { useState, useMemo } from "react"
 import { pagination } from "../../functions/helpers"
@@ -38,12 +39,6 @@ const TablePage = () => {
     const {pagesAmount, dataByPage} = pagination(filteredData)
     const pageData = (currentPage in dataByPage) ? dataByPage[currentPage] : [];
     
-    const handleNextPageClick = () => {
-        setCurrentPage((prev) => ++prev)
-    }
-    const handlePrevPageClick = () => {
-        setCurrentPage((prev) => --prev)
-    }
     return (
         <div className="h-full w-full grid grid-cols-1 grid-rows-12 text-darker-main-color">
             <section className="row-span-2 grid grid-cols-3 grid-rows-1 pl-3 pr-3">
@@ -55,9 +50,9 @@ const TablePage = () => {
             <Table data={pageData} isLoading={loading} error={error} updateData={setData}/>
 
             <div className="pl-3 pr-3 flex items-center justify-between row-start-12 row-end-13 w-full">
-                <button onClick={handlePrevPageClick} disabled={currentPage === 0} className="flex">Previous</button>
+                <PageArrowButton type="back" setPage={setCurrentPage} currentPage={currentPage} pagesAmount={pagesAmount}/>
                 <PagesList setCurrentPage={setCurrentPage} pagesAmount={pagesAmount}/>
-                <button onClick={handleNextPageClick} disabled={pagesAmount-1 === currentPage} className="flex">Next</button>
+                <PageArrowButton type="forward" setPage={setCurrentPage} currentPage={currentPage} pagesAmount={pagesAmount}/>
             </div>
         </div>
     )

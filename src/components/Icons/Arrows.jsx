@@ -34,6 +34,47 @@ function ArrowUp({width='40', height='40', color='rgb(156 163 175)'}) {
   );
 }
 
+export function ArrowRight({width='25', height='25', color='rgb(156 163 175)'}) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke={color}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M4 12h16m0 0l-4-4m4 4l-4 4"
+      ></path>
+    </svg>
+  );
+}
+
+export function ArrowLeft({width='25', height='25', color='rgb(156 163 175)'}) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke={color}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M4 12h16M4 12l4-4m-4 4l4 4"
+      ></path>
+    </svg>
+  );
+}
+
+
 export function BendedArrow({width='20', height='20', color='rgb(156 163 175)'}) {
   return (
     <svg
@@ -53,10 +94,10 @@ export function BendedArrow({width='20', height='20', color='rgb(156 163 175)'})
 
 export function VerticalArrows({isUp = true, width, height}) {
 
-    return(
-        isUp ? 
-        <ArrowUp width={width} height={height}/> 
-        : 
-        <ArrowDown width={width} height={height}/>
-    )
+  return(
+    isUp ? 
+    <ArrowUp width={width} height={height}/> 
+    : 
+    <ArrowDown width={width} height={height}/>
+  )
 }
