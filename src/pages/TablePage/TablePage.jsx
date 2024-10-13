@@ -10,7 +10,7 @@ import { useState } from "react"
 
 
 const TablePage = () => {
-    const { data, loading, error } = useFetchData();
+    const { data, loading, error, setData } = useFetchData();
     const [searchOrder, setSearchOrder] = useState('')
     const [status, setStatus] = useState(statusSelectOptions[0]);
     const [category, setCategory] = useState(categorySelectOptions[0])
@@ -23,7 +23,7 @@ const TablePage = () => {
                 <CategorySelect value={category} onChange={setCategory}/>
             </section>
 
-            <Table data={data} isLoading={loading} error={error}/>
+            <Table data={data} isLoading={loading} error={error} updateData={setData}/>
 
             <section className="row-start-12 row-end-13">
 

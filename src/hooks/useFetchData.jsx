@@ -35,7 +35,7 @@ const useFetchData = (isError=false, delay = 2000) => {
         
     }, [delay, isError]);
   
-    return { data, loading, error };
+    return { data, loading, error, setData};
 };
   
 export default useFetchData;
