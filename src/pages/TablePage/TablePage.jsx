@@ -20,8 +20,7 @@ const TablePage = () => {
 
 
     const {pagesAmount, dataByPage} = pagination(data)
-
-    const dataToRepresent = (currentPage in dataByPage) ? dataByPage[currentPage] : [];
+    const pageData = (currentPage in dataByPage) ? dataByPage[currentPage] : [];
     
     const handleNextPageClick = () => {
         setCurrentPage((prev) => ++prev)
@@ -37,7 +36,7 @@ const TablePage = () => {
                 <CategorySelect value={category} onChange={setCategory}/>
             </section>
 
-            <Table data={dataToRepresent} isLoading={loading} error={error} updateData={setData}/>
+            <Table data={pageData} isLoading={loading} error={error} updateData={setData}/>
 
             <div className="pl-3 pr-3 flex items-center justify-between row-start-12 row-end-13 w-full">
                 <button onClick={handlePrevPageClick} disabled={currentPage === 0} className="flex">Previous</button>

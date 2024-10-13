@@ -2,20 +2,15 @@ import classNames from "classnames"
 import TableHeaderCell from './TableHeaderCell'
 import { TableRow } from "../TableBody/TableRow"
 import { VerticalArrows } from "../../../Icons/Arrows"
-import Checkbox from "../../../Checkbox/Checkbox"
+import InvoiceTableHeader from "./CellVariations/InvoiceTableHeader"
 
-export const TableHead = ({handlers, isChecked, additionalClass = ''}) => {
 
-    const {dateClickHandler, invoiceClickHandler} = handlers
+export const TableHead = ({updateData, additionalClass = ''}) => {
 
     return (
         <thead className={classNames('bg-lighter-main-color', 'w-full','box-border', 'rounded-t-lg', additionalClass)}>
             <TableRow additionalClass="h-6 border-none"> 
-                <TableHeaderCell className="text-left align-middle">
-                    <Checkbox isChecked={isChecked} handleCheckboxChange={invoiceClickHandler}/>
-                    Invoice
-                    <VerticalArrows width={'25'} height={'25'}/>
-                </TableHeaderCell>
+                <InvoiceTableHeader updateData={updateData} />
                 <TableHeaderCell divAdditionalClass="text-left align-middle">
                     Date
                     <VerticalArrows width={'25'} height={'25'}/>
