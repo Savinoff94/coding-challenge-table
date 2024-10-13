@@ -8,7 +8,7 @@ import StatusCell from "./components/TableBody/CellsVariations/StatusCell";
 import LinksCell from "./components/TableBody/CellsVariations/LinksCell";
 import { useState } from "react";
 
-const Table = ({data = []}) => {
+const Table = ({isLoading=false, error='', data = [],}) => {
 
     const handlers = {
         dateClickHandler: ()=> {},
@@ -21,6 +21,7 @@ const Table = ({data = []}) => {
                 <table className="w-full ">
                     <TableHead handlers={handlers} isChecked={false} />
                     <tbody>
+
                         {
                             data.map((row) => {
                                 return (
@@ -36,7 +37,14 @@ const Table = ({data = []}) => {
                             })
                         }
                     </tbody>
+                    
                 </table>
+                {
+                    isLoading && <div className="w-full flex justify-center">Loading...</div>
+                }
+                {
+                    error && <div className="w-full text-red-400 flex justify-center">{error}</div>
+                }
             </div>
         </div>
         

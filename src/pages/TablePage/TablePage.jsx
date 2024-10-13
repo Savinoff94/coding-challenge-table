@@ -2,7 +2,7 @@ import Table from "../../components/Table/Table"
 import SearchInput from "../../components/SearchInput/SearchInput"
 import {StatusSelect, options as statusSelectOptions} from "../../components/StatusSelect/StatusSelect"
 import {CategorySelect, options as categorySelectOptions} from '../../components/CategorySelect/CategorySelect'
-import { data } from "../../data/mockData"
+import useFetchData from "../../hooks/useFetchData"
 import { useState } from "react"
 
 
@@ -10,6 +10,7 @@ import { useState } from "react"
 
 
 const TablePage = () => {
+    const { data, loading, error } = useFetchData();
     const [searchOrder, setSearchOrder] = useState('')
     const [status, setStatus] = useState(statusSelectOptions[0]);
     const [category, setCategory] = useState(categorySelectOptions[0])
@@ -22,7 +23,7 @@ const TablePage = () => {
                 <CategorySelect value={category} onChange={setCategory}/>
             </section>
 
-            <Table data={data}/>
+            <Table data={data} isLoading={loading} error={error}/>
 
             <section className="row-start-12 row-end-13">
 
