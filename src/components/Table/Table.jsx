@@ -79,7 +79,6 @@ const Table = ({isLoading=false, error='', data = [], updateData}) => {
                             })
                         }
                     </tbody>
-                    
                 </table>
                 {
                     isLoading && <div className="w-full flex justify-center">Loading...</div>
