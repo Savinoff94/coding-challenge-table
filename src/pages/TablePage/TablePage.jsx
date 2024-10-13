@@ -3,23 +3,39 @@ import SearchInput from "../../components/SearchInput/SearchInput"
 import {StatusSelect, options as statusSelectOptions} from "../../components/StatusSelect/StatusSelect"
 import {CategorySelect, options as categorySelectOptions} from '../../components/CategorySelect/CategorySelect'
 import useFetchData from "../../hooks/useFetchData"
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { pagination } from "../../functions/helpers"
 import PagesList from "../../components/PagesList/PagesList"
 
 
-
-
-
 const TablePage = () => {
-    const [currentPage, setCurrentPage] = useState(0)
-    const { data, loading, error, setData } = useFetchData();
-    const [searchOrder, setSearchOrder] = useState('')
+    const [currentPage, setCurrentPage] = useState(0);
+    const [searchOrder, setSearchOrder] = useState('');
     const [status, setStatus] = useState(statusSelectOptions[0]);
-    const [category, setCategory] = useState(categorySelectOptions[0])
+    const [category, setCategory] = useState(categorySelectOptions[0]);
+
+    const { data, loading, error, setData } = useFetchData();
+    
+    const filteredData = useMemo(() => {
+        return data.filter(row => {
+
+            const flags = []
+
+            if(searchOrder) {
+
+                flags.push(row.invoice.includes(parseInt(searchOrder)+''));
+            }
+            if(status.value.toLowerCase() !== 'all') {
+
+                flags.push(row.status === status.value)
+            }
+            
+            return flags.every((flag) => flag)
+        });
+    }, [data, searchOrder, status]);
 
 
-    const {pagesAmount, dataByPage} = pagination(data)
+    const {pagesAmount, dataByPage} = pagination(filteredData)
     const pageData = (currentPage in dataByPage) ? dataByPage[currentPage] : [];
     
     const handleNextPageClick = () => {
