@@ -8,7 +8,7 @@ function debounce(func, delay) {
     };
 }
 
-const pagination = (rawData = [], pageItemsAmount = 8) => {
+const setPagination = (rawData = [], pageItemsAmount = 8) => {
     let result = [];
     for (let i = 0; i < rawData.length; i += pageItemsAmount) {
         let pageData = rawData.slice(i, i + pageItemsAmount);
@@ -50,7 +50,7 @@ function fieldToInteger(val) {
 
 module.exports = {
     debounce,
-    pagination,
+    setPagination,
     getIntegersArray,
     dataFields,
     statusToInt,

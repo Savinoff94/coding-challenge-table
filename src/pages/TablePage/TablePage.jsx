@@ -4,8 +4,8 @@ import {StatusSelect, options as statusSelectOptions} from "../../components/Sta
 import {CategorySelect, options as categorySelectOptions} from '../../components/CategorySelect/CategorySelect'
 import PageArrowButton from "../../components/PageArrowButton/PageArrowButton"
 import useFetchData from "../../hooks/useFetchData"
-import { useState, useMemo } from "react"
-import { pagination } from "../../functions/helpers"
+import { useState, useMemo, useEffect } from "react"
+import { setPagination } from "../../functions/helpers"
 import PagesList from "../../components/PagesList/PagesList"
 
 
@@ -34,7 +34,14 @@ const TablePage = () => {
     }, [data, searchOrder, status]);
 
 
-    const {pagesAmount, dataByPage} = pagination(filteredData)
+    const {pagesAmount, dataByPage} = setPagination(filteredData)
+    
+    useEffect(() => {
+        if (currentPage > (pagesAmount - 1)) {
+            setCurrentPage(0);
+        }
+    }, [currentPage, pagesAmount]);
+
     const pageData = (currentPage in dataByPage) ? dataByPage[currentPage] : [];
     
     return (
