@@ -42,6 +42,9 @@ const Table = ({isLoading=false, error='', data = [], updateData}) => {
                     isLoading && <div className="w-full flex justify-center">Loading...</div>
                 }
                 {
+                    (!isLoading && data.length === 0) && <div className="w-full flex justify-center">Empty table</div>
+                }
+                {
                     error && <div className="w-full text-red-400 flex justify-center">{error}</div>
                 }
             </div>
