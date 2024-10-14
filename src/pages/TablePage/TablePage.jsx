@@ -49,7 +49,7 @@ const TablePage = () => {
 
             <div className="pl-3 pr-3 flex items-center justify-between row-start-12 row-end-13 w-full">
                 <PageArrowButton type="back" setPage={setCurrentPage} currentPage={currentPage} pagesAmount={pagesAmount}/>
-                <PagesList setCurrentPage={setCurrentPage} pagesAmount={pagesAmount}/>
+                <PagesList currentPage={currentPage} setCurrentPage={setCurrentPage} pagesAmount={pagesAmount}/>
                 <PageArrowButton type="forward" setPage={setCurrentPage} currentPage={currentPage} pagesAmount={pagesAmount}/>
             </div>
         </div>
