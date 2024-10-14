@@ -1,3 +1,13 @@
+
+
+const getIncrement = (function() {
+  let increment = 0;
+  return function() {
+    increment++
+    return increment.toString()
+  }
+})()
+
 export const data = [
     {
       invoice: '1001',
@@ -163,7 +173,7 @@ export const data = [
       }
     },
     {
-      invoice: '1001' + '1',
+      invoice: '1001' + getIncrement(),
       date: '1640988000',
       status: 'paid',
       customerInfo: {
@@ -173,7 +183,7 @@ export const data = [
       }
     },
     {
-      invoice: '1002' + '1',
+      invoice: '1002' + getIncrement(),
       date: '1641004400',
       status: 'refunded',
       customerInfo: {
@@ -184,7 +194,7 @@ export const data = [
       }
     },
     {
-      invoice: '1003' + '1',
+      invoice: '1003' + getIncrement(),
       date: '1641100800',
       status: 'cancelled',
       customerInfo: {
@@ -195,7 +205,7 @@ export const data = [
       }
     },
     {
-      invoice: '1004' + '1',
+      invoice: '1004' + getIncrement(),
       date: '1641207200',
       status: 'paid',
       customerInfo: {
@@ -206,7 +216,7 @@ export const data = [
       }
     },
     {
-      invoice: '1001' + '3',
+      invoice: '1001' + getIncrement(),
       date: '1640923000',
       status: 'paid',
       customerInfo: {
@@ -216,7 +226,7 @@ export const data = [
       }
     },
     {
-      invoice: '1002' + '3',
+      invoice: '1002' + getIncrement(),
       date: '1641023400',
       status: 'refunded',
       customerInfo: {
@@ -227,7 +237,7 @@ export const data = [
       }
     },
     {
-      invoice: '1003' + '3',
+      invoice: '1003' + getIncrement(),
       date: '1641123800',
       status: 'cancelled',
       customerInfo: {
@@ -238,7 +248,7 @@ export const data = [
       }
     },
     {
-      invoice: '1004' + '3',
+      invoice: '1004' + getIncrement(),
       date: '1641223200',
       status: 'paid',
       customerInfo: {
@@ -249,7 +259,7 @@ export const data = [
       }
     },
     {
-      invoice: '1003' + '19',
+      invoice: '1003' + getIncrement(),
       date: '1641100800',
       status: 'cancelled',
       customerInfo: {
@@ -260,7 +270,7 @@ export const data = [
       }
     },
     {
-      invoice: '1004' + '1',
+      invoice: '1004' + getIncrement(),
       date: '1641207200',
       status: 'paid',
       customerInfo: {
@@ -271,7 +281,7 @@ export const data = [
       }
     },
     {
-      invoice: '1001' + '25',
+      invoice: '1001' + getIncrement(),
       date: '1640923000',
       status: 'paid',
       customerInfo: {
@@ -281,7 +291,7 @@ export const data = [
       }
     },
     {
-      invoice: '1002' + '25',
+      invoice: '1002' + getIncrement(),
       date: '1641023400',
       status: 'refunded',
       customerInfo: {
@@ -292,7 +302,7 @@ export const data = [
       }
     },
     {
-      invoice: '1003' + '25',
+      invoice: '1003' + getIncrement(),
       date: '1641123800',
       status: 'cancelled',
       customerInfo: {
@@ -303,7 +313,7 @@ export const data = [
       }
     },
     {
-      invoice: '1004' + '25',
+      invoice: '1004' + getIncrement(),
       date: '1641223200',
       status: 'paid',
       customerInfo: {
@@ -314,7 +324,7 @@ export const data = [
       }
     },
     {
-      invoice: '1003' + '41',
+      invoice: '1003' + getIncrement(),
       date: '1641100800',
       status: 'cancelled',
       customerInfo: {
@@ -325,7 +335,7 @@ export const data = [
       }
     },
     {
-      invoice: '1004' + '1',
+      invoice: '1004' + getIncrement(),
       date: '1641207200',
       status: 'paid',
       customerInfo: {
@@ -336,7 +346,7 @@ export const data = [
       }
     },
     {
-      invoice: '1001' + '12',
+      invoice: '1001' + getIncrement(),
       date: '1640923000',
       status: 'paid',
       customerInfo: {
@@ -346,7 +356,7 @@ export const data = [
       }
     },
     {
-      invoice: '1002' + '12',
+      invoice: '1002' + getIncrement(),
       date: '1641023400',
       status: 'refunded',
       customerInfo: {
@@ -357,7 +367,7 @@ export const data = [
       }
     },
     {
-      invoice: '1003' + '01',
+      invoice: '1003' + getIncrement(),
       date: '1641123800',
       status: 'cancelled',
       customerInfo: {
@@ -368,7 +378,7 @@ export const data = [
       }
     },
     {
-      invoice: '1004' + '7',
+      invoice: '1004' + getIncrement(),
       date: '1641223200',
       status: 'paid',
       customerInfo: {
@@ -379,7 +389,7 @@ export const data = [
       }
     },
     {
-      invoice: '1001' + '08',
+      invoice: '1001' + getIncrement(),
       date: '1640923000',
       status: 'paid',
       customerInfo: {
@@ -389,7 +399,7 @@ export const data = [
       }
     },
     {
-      invoice: '1002' + '14',
+      invoice: '1002' + getIncrement(),
       date: '1641023400',
       status: 'refunded',
       customerInfo: {
@@ -400,7 +410,7 @@ export const data = [
       }
     },
     {
-      invoice: '1003' + '71',
+      invoice: '1003' + getIncrement(),
       date: '1641123800',
       status: 'cancelled',
       customerInfo: {
@@ -411,7 +421,7 @@ export const data = [
       }
     },
     {
-      invoice: '1004' + '01',
+      invoice: '1004' + getIncrement(),
       date: '1641223200',
       status: 'paid',
       customerInfo: {
@@ -422,7 +432,7 @@ export const data = [
       }
     },
     {
-      invoice: '1004' + '81',
+      invoice: '1004' + getIncrement(),
       date: '1641223200',
       status: 'paid',
       customerInfo: {
@@ -433,7 +443,7 @@ export const data = [
       }
     },
     {
-      invoice: '1001' + '01',
+      invoice: '1001' + getIncrement(),
       date: '1640923000',
       status: 'paid',
       customerInfo: {
@@ -443,7 +453,7 @@ export const data = [
       }
     },
     {
-      invoice: '1002' + '33',
+      invoice: '1002' + getIncrement(),
       date: '1641023400',
       status: 'refunded',
       customerInfo: {
@@ -454,7 +464,7 @@ export const data = [
       }
     },
     {
-      invoice: '1003' + '34',
+      invoice: '1003' + getIncrement(),
       date: '1641123800',
       status: 'cancelled',
       customerInfo: {
@@ -465,7 +475,7 @@ export const data = [
       }
     },
     {
-      invoice: '1004' + '35',
+      invoice: '1004' + getIncrement(),
       date: '1641223200',
       status: 'paid',
       customerInfo: {
@@ -476,7 +486,7 @@ export const data = [
       }
     },
     {
-      invoice: '1004' + '32',
+      invoice: '1004' + getIncrement(),
       date: '1641223200',
       status: 'paid',
       customerInfo: {
@@ -487,7 +497,7 @@ export const data = [
       }
     },
     {
-      invoice: '1001' + '55',
+      invoice: '1001' + getIncrement(),
       date: '1640923000',
       status: 'paid',
       customerInfo: {
@@ -497,7 +507,7 @@ export const data = [
       }
     },
     {
-      invoice: '1002' + '55',
+      invoice: '1002' + getIncrement(),
       date: '1641023400',
       status: 'refunded',
       customerInfo: {
@@ -508,7 +518,7 @@ export const data = [
       }
     },
     {
-      invoice: '1003' + '55',
+      invoice: '1003' + getIncrement(),
       date: '1641123800',
       status: 'cancelled',
       customerInfo: {
@@ -519,7 +529,7 @@ export const data = [
       }
     },
     {
-      invoice: '1004' + '55',
+      invoice: '1004' + getIncrement(),
       date: '1641223200',
       status: 'paid',
       customerInfo: {
