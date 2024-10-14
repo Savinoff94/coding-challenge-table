@@ -18,10 +18,18 @@ const Table = ({isLoading=false, error='', data = [], updateData}) => {
                             data.map((row) => {
                                 return (
                                     <TableRow key={row.invoice}>
-                                        <InvoiceCell updateData={updateData} invoiceNumber={row.invoice} isChecked={row.isChecked}/>
+                                        <InvoiceCell
+                                            updateData={updateData}
+                                            invoiceNumber={row.invoice} 
+                                            isChecked={row.isChecked}
+                                        />
                                         <DateCell timestamp={row.date}/>
                                         <StatusCell status={row.status}/>
-                                        <UserCell email={row.customerInfo.email} name={row.customerInfo.name} url={row.customerInfo.picUrl}/>
+                                        <UserCell 
+                                            email={row.customerInfo.email} 
+                                            name={row.customerInfo.name} 
+                                            url={row.customerInfo.picUrl}
+                                        />
                                         <PurchaseCell/>
                                         <LinksCell/>
                                     </TableRow>
